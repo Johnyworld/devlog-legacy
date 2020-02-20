@@ -8,12 +8,12 @@ import ToggleButton from '../../Atoms/Buttons/ToggleButton';
  * - 버튼을 클릭하면 `isBrightMode` 값을 반전합니다. 
  */
 const ThemeModeButton:React.FC = () => {
-    const onChange = () => {
+    const onToggle = () => {
         modeStore.toggleBrightMode();
     }
 
     return (
-        <ToggleButton checked={modeStore.brightMode} onClick={onChange} />
+        <ToggleButton checked={modeStore.brightMode} onClick={onToggle} />
     );
 }
 
