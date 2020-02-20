@@ -1,14 +1,19 @@
 import * as React from 'react';
+import { modeStore } from '../../../store';
 
-interface Props {
-    isBrightMode: boolean;
-    onChange: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
-}
+/**
+ * ### 앱의 테마를 밝은/어두운 모드로 변경합니다.
+ *
+ * - 버튼을 클릭하면 `isBrightMode` 값을 반전합니다. 
+ */
+const ThemeModeButton:React.FC = () => {
+    const onChange = () => {
+        modeStore.toggleBrightMode();
+    }
 
-const ThemeModeButton:React.FC<Props> = ({ isBrightMode, onChange }) => {
     return (
-        <button onClick={onChange}>{ isBrightMode ? 'Bright mode' : 'Dark mode' }</button>
-    )
+        <button onClick={onChange}>{ modeStore.brightMode ? 'Bright mode' : 'Dark mode' }</button>
+    );
 }
 
 export default ThemeModeButton;
