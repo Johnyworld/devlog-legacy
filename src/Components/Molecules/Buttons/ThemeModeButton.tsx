@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { modeStore } from '../../../store';
+import ToggleButton from '../../Atoms/Buttons/ToggleButton';
 
 /**
  * ### 앱의 테마를 밝은/어두운 모드로 변경합니다.
@@ -12,7 +13,7 @@ const ThemeModeButton:React.FC = () => {
     }
 
     return (
-        <button onClick={onChange}>{ modeStore.brightMode ? 'Bright mode' : 'Dark mode' }</button>
+        <ToggleButton checked={modeStore.brightMode} onClick={onChange} />
     );
 }
 
