@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         color: ${props=> props.theme.color.normalFont};
         background-color: ${props=> props.theme.color.background};
+        transition: .2s;
     }
 `;
 

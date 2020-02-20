@@ -12,9 +12,6 @@ const App:React.FC = () => {
         <ThemeProvider theme={ modeStore.brightMode ? brightTheme : darkTheme }>
             <GlobalStyles />
             <Header />
-            <div className="App">
-                Hello world
-            </div>
         </ThemeProvider>
     ));
 }
