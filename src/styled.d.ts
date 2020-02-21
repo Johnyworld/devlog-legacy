@@ -4,7 +4,12 @@ declare module 'styled-components' {
     export interface DefaultTheme {
         color: {
             background: string;
-            normalFont: string;
+            clear: string;
+            lightest: string;
+            lighter: string;
+            light: string;
+            strongest: string;
+            dayOrNight: string;
         }
     }
 }
