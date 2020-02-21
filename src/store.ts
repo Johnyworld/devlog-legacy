@@ -1,10 +1,12 @@
 const { observable } = require('mobx');
 
+const modeAtlocalStorage = localStorage.getItem('brightMode')
+
 const modeStore = observable({
-    brightMode: true,
+    brightMode: modeAtlocalStorage ? modeAtlocalStorage === "false" ? false : true : true,
     toggleBrightMode() {
-        console.log(this.brightMode);
         this.brightMode = !this.brightMode;
+        localStorage.setItem('brightMode', (this.brightMode).toString());
     }
 });
 
