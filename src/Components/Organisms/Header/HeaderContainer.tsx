@@ -1,16 +1,32 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import ThemeModeButton from '../../Molecules/Buttons/ThemeModeButton';
+import SearchBar from '../../Atoms/Buttons/SearchBar';
 
 const Container = styled.header`
-    padding: 10px;
-    border-bottom: 1px solid ${props=> props.theme.color.normalFont};
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+`;
+
+const Column = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    *:not(:last-child) {
+        margin-right: 10px;
+    }
 `;
 
 const HeaderContainer:React.FC = () => {
     return (
         <Container>
-            <ThemeModeButton />
+            <h2>로고</h2>
+            <Column>
+                <ThemeModeButton />
+                <SearchBar term="" />
+            </Column>
         </Container>
     )
 }
