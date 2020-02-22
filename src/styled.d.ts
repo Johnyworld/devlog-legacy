@@ -10,6 +10,7 @@ declare module 'styled-components' {
             light: string;
             strongest: string;
             dayOrNight: string;
-        }
+        },
+        inputNormal: string;
     }
 }

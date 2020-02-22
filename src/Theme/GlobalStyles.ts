@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
 
     html {
         font-size: 10px;
+        font-family: sans-serif;
     }
 
     body {
@@ -14,6 +15,10 @@ const GlobalStyles = createGlobalStyle`
 
     * {
         box-sizing: border-box;
+    }
+
+    li {
+        list-style-type: none;
     }
 
     body {
