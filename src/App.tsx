@@ -7,13 +7,13 @@ import brightTheme from './Theme/BrightTheme';
 import { modeStore } from './store';
 import Header from './Components/Organisms/Header';
 
-const App:React.FC = () => {
+const App: React.FC = () => {
     return useObserver(() => (
-        <ThemeProvider theme={ modeStore.brightMode ? brightTheme : darkTheme }>
+        <ThemeProvider theme={modeStore.brightMode ? brightTheme : darkTheme}>
             <GlobalStyles />
             <Header />
         </ThemeProvider>
     ));
-}
+};
 
 export default App;

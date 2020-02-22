@@ -1,12 +1,20 @@
 const { observable } = require('mobx');
 
-const modeAtlocalStorage = localStorage.getItem('brightMode')
+type Languages = 'ko' | 'en';
 
 const modeStore = observable({
-    brightMode: modeAtlocalStorage ? modeAtlocalStorage === "false" ? false : true : true,
+    brightMode: localStorage.getItem('brightMode') || false,
+    lang: localStorage.getItem('lang') || window.navigator.language.substr(0, 2),
+    changeLanguage(lang: Languages) {
+        if (lang) {
+            this.lang = lang;
+            localStorage.setItem('lang', lang);
+        }
+    },
     toggleBrightMode() {
         this.brightMode = !this.brightMode;
-        localStorage.setItem('brightMode', (this.brightMode).toString());
+        if (this.brightMode) localStorage.setItem('brightMode', 'true');
+        else localStorage.removeItem('brightMode');
     }
 });
 
