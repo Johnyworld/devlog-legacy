@@ -17,7 +17,7 @@ const SelectLanguages: React.FC = () => {
         <Dropdown
             list={list}
             long='short'
-            defaultValue={modeStore.lang}
+            initValue={modeStore.lang}
             placeholder='Select'
             listFit
             onChange={onChange}

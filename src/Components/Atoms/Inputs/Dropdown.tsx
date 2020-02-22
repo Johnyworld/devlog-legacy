@@ -16,7 +16,7 @@ interface Props extends widthProps {
     list: ListItemProps[];
     placeholder?: string;
     /** Dropdown 리스트의 내용이 많아지면 검색이 필요할 수 있습니다. 검색이 가능해집니다. */
-    defaultValue?: string | number;
+    initValue?: string | number;
     /** Dropdown 리스트의 내용이 많아지면 검색이 필요할 수 있습니다. 검색이 가능해집니다. */
     searchable?: boolean;
     /** 선택했던 값이나, 검색어 등을 지울 수 있는 버튼이 활성화됩니다. searchable이 true면 deletable은 자동으로 true가 됩니다. */
@@ -111,14 +111,12 @@ const Dropdown: React.FC<Props> = ({
     placeholder,
     long,
     listFit,
-    defaultValue,
+    initValue,
     searchable,
     deletable,
     onChange
 }: Props) => {
-    const defaultItem = defaultValue
-        ? list.find(item => item.id === defaultValue)
-        : undefined;
+    const defaultItem = initValue ? list.find(item => item.id === initValue) : undefined;
     const [showList, setShowList] = useState(false);
     const [selected, setSelected] = useState(defaultItem ? defaultItem : undefined);
     const [term, setTerm] = useState('');
