@@ -1,3 +1,5 @@
+import i18n from './i18n';
+
 const { observable } = require('mobx');
 
 type Languages = 'ko' | 'en';
@@ -9,6 +11,7 @@ const modeStore = observable({
         if (lang) {
             this.lang = lang;
             localStorage.setItem('lang', lang);
+            i18n.changeLanguage(lang);
         }
     },
     toggleDarkMode(checked: boolean) {
