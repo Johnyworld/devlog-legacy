@@ -1,8 +1,9 @@
 import * as React from 'react';
+import { useState } from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 
 interface ContainerProps {
-    isBrightMode: boolean;
+    checked: boolean;
     onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }
 
@@ -18,7 +19,7 @@ const Container: StyledComponent<'div', DefaultTheme, ContainerProps, never> = s
     transition: 0.3s;
     cursor: pointer;
     ${(props: ContainerProps) =>
-        props.isBrightMode
+        props.checked
             ? `
         background-color: #83aad2;
         `
@@ -35,7 +36,7 @@ const Selector: StyledComponent<'div', DefaultTheme, ContainerProps, never> = st
     background-color: ${props => props.theme.color.lightest};
     transition: 0.3s;
     ${(props: ContainerProps) =>
-        props.isBrightMode
+        props.checked
             ? `
         transform: translateX(-1em);
         `
@@ -46,8 +47,9 @@ const Selector: StyledComponent<'div', DefaultTheme, ContainerProps, never> = st
 
 interface Props {
     className?: string;
-    isBrightMode: boolean;
-    onClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+    initChecked: boolean;
+    /** Check를 바꿀 때 마다 onChange로 들어오는 함수에 boolean값을 전달합니다. */
+    onChange: (checked: boolean) => void;
 }
 
 /**
@@ -55,17 +57,23 @@ interface Props {
  *
  * - `Dark`모드와 `Bright` 모드가 토글됩니다.
  */
-const ThemeToggler: React.FC<Props> = ({ className, isBrightMode, onClick }) => {
+const ThemeToggler: React.FC<Props> = ({ className, initChecked, onChange }) => {
+    const [checked, setChecked] = useState(initChecked);
+
+    const onToggle = () => {
+        setChecked(!checked);
+        onChange(!checked);
+    };
+
     return (
-        <Container className={className} onClick={onClick} isBrightMode={isBrightMode}>
-            <Selector isBrightMode={isBrightMode} />
-            {/* <button onClick={onClick}>{ checked ? 'Checked' : 'Unchecked' }</button> */}
+        <Container className={className} onClick={onToggle} checked={checked}>
+            <Selector checked={checked} />
         </Container>
     );
 };
 
 ThemeToggler.defaultProps = {
-    isBrightMode: true
+    initChecked: true
 };
 
 export default ThemeToggler;

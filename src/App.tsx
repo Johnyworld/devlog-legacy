@@ -9,7 +9,7 @@ import Header from './Components/Organisms/Header';
 
 const App: React.FC = () => {
     return useObserver(() => (
-        <ThemeProvider theme={modeStore.brightMode ? brightTheme : darkTheme}>
+        <ThemeProvider theme={modeStore.darkMode ? darkTheme : brightTheme}>
             <GlobalStyles />
             <Header />
         </ThemeProvider>
