@@ -1,5 +1,5 @@
 import reset from 'styled-reset';
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
     ${reset}
@@ -21,9 +21,14 @@ const GlobalStyles = createGlobalStyle`
         list-style-type: none;
     }
 
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
     body {
-        color: ${props=> props.theme.color.strongest};
-        background-color: ${props=> props.theme.color.background};
+        color: ${props => props.theme.color.strongest};
+        background-color: ${props => props.theme.color.background};
         transition: .2s;
     }
 `;
