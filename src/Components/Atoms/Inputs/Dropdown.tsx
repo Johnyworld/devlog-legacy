@@ -2,9 +2,11 @@ import * as React from 'react';
 import { useCallback, useState } from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 
-interface widthProps {
-    long?: 'short' | 'middle' | 'long' | 'full';
+export interface widthProps {
+    long?: 'short' | 'middle' | 'long';
     listFit?: boolean;
+    /** 가로 사이즈가 가득찹니다. */
+    fluid?: boolean;
 }
 
 export interface ListItemProps {
@@ -29,9 +31,10 @@ const Container = styled.div`
     position: relative;
 `;
 
-const InputWrapper = styled.div`
+const InputWrapper: StyledComponent<'div', DefaultTheme, widthProps, never> = styled.div`
     position: relative;
     display: inline-block;
+    ${(props: widthProps) => props.fluid && `width: 100%;`};
 `;
 
 const Input: StyledComponent<'input', DefaultTheme, widthProps, never> = styled.input`
@@ -39,14 +42,14 @@ const Input: StyledComponent<'input', DefaultTheme, widthProps, never> = styled.
     color: ${props => props.theme.color.strongest};
     background-color: ${props => props.theme.color.lightest};
     width: ${(props: widthProps) =>
-        props.long === 'short'
+        props.fluid
+            ? `100%`
+            : props.long === 'short'
             ? `9em;`
             : props.long === 'middle'
             ? `12em;`
             : props.long === 'long'
             ? `16em;`
-            : props.long === 'full'
-            ? `100%;`
             : null};
     cursor: pointer;
 `;
@@ -80,7 +83,9 @@ const ListItem: StyledComponent<'li', DefaultTheme, widthProps, never> = styled.
     cursor: pointer;
     transition: 0.3s;
     width: ${(props: widthProps) =>
-        !props.listFit
+        props.fluid
+            ? `100%`
+            : !props.listFit
             ? `auto;`
             : props.long === 'short'
             ? `9em;`
@@ -88,8 +93,6 @@ const ListItem: StyledComponent<'li', DefaultTheme, widthProps, never> = styled.
             ? `12em;`
             : props.long === 'long'
             ? `16em;`
-            : props.long === 'full'
-            ? `100%;`
             : null};
     &:not(:last-child) {
         border-bottom: 1px solid ${props => props.theme.color.lighter};
@@ -112,6 +115,7 @@ const Dropdown: React.FC<Props> = ({
     long,
     listFit,
     initValue,
+    fluid,
     searchable,
     deletable,
     onChange
@@ -120,7 +124,7 @@ const Dropdown: React.FC<Props> = ({
     const [showList, setShowList] = useState(false);
     const [selected, setSelected] = useState(defaultItem ? defaultItem : undefined);
     const [term, setTerm] = useState('');
-    const [hovering, setHovering] = useState(true);
+    const [hovering, setHovering] = useState(false);
 
     const onSelect = useCallback(
         ({ id, text }: ListItemProps) => {
@@ -146,12 +150,13 @@ const Dropdown: React.FC<Props> = ({
 
     return (
         <Container>
-            <InputWrapper>
+            <InputWrapper fluid={fluid}>
                 <Input
                     value={selected ? selected.text : term}
                     placeholder={placeholder}
                     readOnly={!searchable || selected ? true : false}
                     long={long}
+                    fluid={fluid}
                     onFocus={() => {
                         setShowList(true);
                     }}
@@ -181,6 +186,7 @@ const Dropdown: React.FC<Props> = ({
                                 key={item.id}
                                 listFit={listFit}
                                 long={long}
+                                fluid={fluid}
                                 onMouseEnter={() => setHovering(true)}
                                 onMouseOut={() => setHovering(false)}>
                                 {item.text}
