@@ -12,5 +12,7 @@ declare module 'styled-components' {
             dayOrNight: string;
         },
         inputNormal: string;
+        boxStyle: string;
+        listInBox: string;
     }
 }

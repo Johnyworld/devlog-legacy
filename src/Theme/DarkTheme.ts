@@ -1,4 +1,5 @@
 import { DefaultTheme } from 'styled-components';
+import { inputNormal, getBoxStyle, getListInBox } from './CommonTheme';
 
 const darkTheme:DefaultTheme = {
     color: {
@@ -10,16 +11,9 @@ const darkTheme:DefaultTheme = {
         strongest: '#eee',
         dayOrNight: '#1b1c1d',
     },
-    inputNormal: `
-        border: none;
-        outline: none;
-        font-size: 1.4rem;
-        font-weight: 600;
-        width: 12em;
-        line-height: 2.2em;
-        padding: 0 1em;
-        border-radius: 2em;
-    `
+    inputNormal,
+    boxStyle: getBoxStyle(true),
+    listInBox: getListInBox(true)
 }
 
 export default darkTheme;

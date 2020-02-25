@@ -38,8 +38,8 @@ const InputWrapper: StyledComponent<'div', DefaultTheme, widthProps, never> = st
 `;
 
 const Input: StyledComponent<'input', DefaultTheme, widthProps, never> = styled.input`
-    ${props => props.theme.inputNormal}
-    color: ${props => props.theme.color.strongest};
+    ${props=> props.theme.inputNormal}
+    color: ${props=> props.theme.color.strongest};
     background-color: ${props => props.theme.color.lightest};
     width: ${(props: widthProps) =>
         props.fluid
@@ -63,25 +63,20 @@ const ClearButton = styled.button`
     font-size: 1.4rem;
     border: none;
     border-radius: 0.6em;
-    background: ${props => props.theme.color.lighter};
+    background: ${props=> props.theme.color.lighter};
     outline: none;
     cursor: pointer;
 `;
 
 const ListContainer = styled.ul`
+    ${props=> props.theme.boxStyle};
     position: absolute;
     top: 3em;
-    border-radius: 1em;
-    overflow: hidden;
     font-size: 1.4rem;
-    background-color: ${props => props.theme.color.lightest};
-    box-shadow: 0 0.3em 0.3em rgba(0, 0, 0, 0.05);
 `;
 
 const ListItem: StyledComponent<'li', DefaultTheme, widthProps, never> = styled.li`
-    padding: 0.8em 1em;
-    cursor: pointer;
-    transition: 0.3s;
+    ${props=> props.theme.listInBox}
     width: ${(props: widthProps) =>
         props.fluid
             ? `100%`
@@ -94,12 +89,6 @@ const ListItem: StyledComponent<'li', DefaultTheme, widthProps, never> = styled.
             : props.long === 'long'
             ? `16em;`
             : null};
-    &:not(:last-child) {
-        border-bottom: 1px solid ${props => props.theme.color.lighter};
-    }
-    &:hover {
-        background-color: ${props => props.theme.color.lighter};
-    }
 `;
 
 /**
