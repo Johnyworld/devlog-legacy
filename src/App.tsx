@@ -9,6 +9,8 @@ import { modeStore } from './store';
 import Header from './Components/Organisms/Header';
 import About from './Components/Page/About';
 import Development from './Components/Page/Development';
+import Book from './Components/Page/Book';
+import Diary from './Components/Page/Diary';
 
 const App: React.FC = () => {
     return useObserver(() => (
@@ -17,12 +19,10 @@ const App: React.FC = () => {
             <Router>
                 <Header />
                 <Switch>
-                    <Route path='/about'>
-                        <About />
-                    </Route>
-                    <Route path='/dev'>
-                        <Development />
-                    </Route>
+                    <Route path='/about' component={About} />
+                    <Route path='/dev' component={Development} />
+                    <Route path='/book' component={Book} />
+                    <Route path='/diary' component={Diary} />
                 </Switch>
             </Router>
         </ThemeProvider>
