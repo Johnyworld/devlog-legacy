@@ -13,7 +13,7 @@ const getGNB = (t: TFunction) => {
         {
             id: '2',
             content: t('gnb_blog'),
-            uri: '/blog',
+            uri: '/dev',
             children: [
                 {
                     id: '21',
