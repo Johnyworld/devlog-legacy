@@ -1,9 +1,4 @@
 import * as React from 'react';
-import styled from 'styled-components';
-
-const Container = styled.button`
-
-`;
 
 interface Props {
     size?: 'small' | 'medium' | 'large';
@@ -21,9 +16,9 @@ interface Props {
 
 const Button:React.FC<Props> = ({ size, text, fluid, disabled, primary, line, onClick }: Props) => {
     return (
-        <Container onClick={onClick}>
+        <button onClick={onClick}>
             {text}
-        </Container>
+        </button>
     )
 }
 
