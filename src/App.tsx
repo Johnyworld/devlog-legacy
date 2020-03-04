@@ -7,10 +7,10 @@ import darkTheme from './Theme/DarkTheme';
 import brightTheme from './Theme/BrightTheme';
 import { modeStore } from './store';
 import Header from './Components/Organisms/Header';
-import About from './Components/Page/About';
-import Development from './Components/Page/Development';
-import Book from './Components/Page/Book';
-import Diary from './Components/Page/Diary';
+import About from './Components/Pages/About';
+import Development from './Components/Pages/Development';
+import Book from './Components/Pages/Book';
+import Diary from './Components/Pages/Diary';
 
 const App: React.FC = () => {
     return useObserver(() => (
