@@ -6,6 +6,4 @@ export default {
     gnb_blog: '블로그',
     gnb_work: '포트폴리오',
     gnb_book: '서평',
-    gnb_github: '깃헙',
-    gnb_codepen: '코드펜',
 };

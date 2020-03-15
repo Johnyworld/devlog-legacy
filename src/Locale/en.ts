@@ -6,6 +6,4 @@ export default {
     gnb_blog: 'BLOG',
     gnb_work: 'WORK',
     gnb_book: 'BOOK',
-    gnb_github: 'GITHUB',
-    gnb_codepen: 'CODEPEN',
 };

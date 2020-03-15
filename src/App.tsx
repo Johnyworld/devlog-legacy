@@ -7,7 +7,6 @@ import darkTheme from './Theme/DarkTheme';
 import brightTheme from './Theme/BrightTheme';
 import { modeStore } from './store';
 import Header from './Components/Organisms/Header';
-import About from './Components/Pages/About';
 import Blog from './Components/Pages/Blog';
 import Book from './Components/Pages/Book';
 import Work from './Components/Pages/Work';
@@ -20,7 +19,6 @@ const App: React.FC = () => {
             <Router>
                 <Header />
                 <Switch>
-                    <Route path='/about' component={About} />
                     <Route path='/blog' component={Blog} />
                     <Route path='/work' component={Work} />
                     <Route path='/book' component={Book} />
