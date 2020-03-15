@@ -26,7 +26,7 @@ const HeaderContainer: React.FC = () => {
     const { t } = useTranslation();
     return (
         <Container>
-            <h2>{t('hello')}</h2>
+            <h3>{t('hello')}</h3>
             <Column>
                 <Global />
                 <ThemeModeButton />
