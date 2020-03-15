@@ -76,7 +76,7 @@ const Menu: React.FC<Props> = ({ list, horisontal }: Props) => {
                     { item.children &&
                         <Children className='gnb-children'>
                             { item.children.map(child=> (
-                                <ChildrenListItem>
+                                <ChildrenListItem key={child.id}>
                                     { child.uri.includes('http')
                                         ? <a href={child.uri} target='blank'>{child.content}</a>
                                         : <Link to={child.uri}>{child.content}</Link>

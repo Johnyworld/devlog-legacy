@@ -6,6 +6,8 @@ import GlobalStyles from './Theme/GlobalStyles';
 import darkTheme from './Theme/DarkTheme';
 import brightTheme from './Theme/BrightTheme';
 import { modeStore } from './store';
+
+
 import Header from './Components/Organisms/Header';
 import Blog from './Components/Pages/Blog';
 import Book from './Components/Pages/Book';
