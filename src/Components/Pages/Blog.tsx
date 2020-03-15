@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 const Container = styled.div``;
 
-const About: React.FC = () => {
+const Blog: React.FC = () => {
     return (
         <Container>
-            <p>About</p>
+            <p>Blog</p>
         </Container>
     );
 };
 
-export default About;
+export default Blog;
