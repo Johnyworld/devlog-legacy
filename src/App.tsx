@@ -8,9 +8,10 @@ import brightTheme from './Theme/BrightTheme';
 import { modeStore } from './store';
 import Header from './Components/Organisms/Header';
 import About from './Components/Pages/About';
-import Development from './Components/Pages/Development';
+import Blog from './Components/Pages/Blog';
 import Book from './Components/Pages/Book';
-import Diary from './Components/Pages/Diary';
+import Work from './Components/Pages/Work';
+import Home from './Components/Pages/Home';
 
 const App: React.FC = () => {
     return useObserver(() => (
@@ -20,9 +21,10 @@ const App: React.FC = () => {
                 <Header />
                 <Switch>
                     <Route path='/about' component={About} />
-                    <Route path='/dev' component={Development} />
+                    <Route path='/blog' component={Blog} />
+                    <Route path='/work' component={Work} />
                     <Route path='/book' component={Book} />
-                    <Route path='/diary' component={Diary} />
+                    <Route exact path='/' component={Home} />
                 </Switch>
             </Router>
         </ThemeProvider>

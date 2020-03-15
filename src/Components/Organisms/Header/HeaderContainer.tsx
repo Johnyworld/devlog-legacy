@@ -11,6 +11,7 @@ const Container = styled.header`
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    border-bottom: 1px solid #222;
 `;
 
 const Column = styled.div`
