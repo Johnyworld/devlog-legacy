@@ -6,7 +6,6 @@ import { getGNB } from '../../../../Data/GNB';
 const Global: React.FC = () => {
     const { t } = useTranslation();
     const list = getGNB(t);
-    console.log(list);
     return <Menu list={list} horisontal />;
 };
 
