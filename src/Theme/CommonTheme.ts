@@ -27,3 +27,11 @@ export const getListInBox = (isDarkMode:boolean) => `
         background-color: ${isDarkMode ? '#444' : '#ddd'};
     }
 `
+
+export const font = {
+    small: '12px',
+    regular: '14px',
+    medium: '16px',
+    large: '18px',
+    title: '32px',
+}

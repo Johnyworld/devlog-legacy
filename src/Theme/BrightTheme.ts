@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'styled-components';
-import { inputNormal, getBoxStyle, getListInBox } from './CommonTheme';
+import { inputNormal, getBoxStyle, getListInBox, font } from './CommonTheme';
 
 const brightTheme:DefaultTheme = {
     color: {
@@ -7,10 +7,12 @@ const brightTheme:DefaultTheme = {
         clear: '#fff',
         lightest: '#fff',
         lighter: '#ddd',
-        light: '#ccc',
+        light: '#aaa',
         strongest: '#333',
         dayOrNight: '#83aad2',
+        primary: '#a541ff',
     },
+    font,
     inputNormal,
     boxStyle: getBoxStyle(false),
     listInBox: getListInBox(false)
