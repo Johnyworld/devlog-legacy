@@ -11,7 +11,7 @@ const Container = styled.header`
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
-    border-bottom: 1px solid ${props=> props.theme.color.lightest};
+    border-bottom: 1px solid ${props=> props.theme.color.clear};
 `;
 
 const Column = styled.div`

@@ -4,7 +4,7 @@ import { inputNormal, getBoxStyle, getListInBox, font } from './CommonTheme';
 const brightTheme:DefaultTheme = {
     color: {
         background: '#eaeaea',
-        clear: '#fff',
+        clear: '#dedede',
         lightest: '#fff',
         lighter: '#ddd',
         light: '#aaa',
