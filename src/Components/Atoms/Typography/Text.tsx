@@ -20,10 +20,10 @@ interface Props extends Styles {
     text: string;
 }
 
-const RegularFont: React.FC<Props> = ({ text, color='inherit', block }:Props) => {
+const Text: React.FC<Props> = ({ text, color='inherit', block }:Props) => {
     return (
         <Container color={color} block={block} >{text}</Container>
     );
 };
 
-export default RegularFont;
+export default Text;
