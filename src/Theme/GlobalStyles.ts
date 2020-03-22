@@ -31,6 +31,11 @@ const GlobalStyles = createGlobalStyle`
         background-color: ${props => props.theme.color.background};
         transition: .2s;
     }
+
+    :root {
+        --header_height: 74px;
+        --main_maxWidth: 1140px;
+    }
 `;
 
 export default GlobalStyles;
