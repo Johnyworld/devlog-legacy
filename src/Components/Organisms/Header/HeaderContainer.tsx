@@ -11,6 +11,7 @@ const Container = styled.header`
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    height: var(--header_height);
     border-bottom: 1px solid ${props=> props.theme.color.clear};
 `;
 
