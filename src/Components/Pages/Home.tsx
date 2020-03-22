@@ -25,7 +25,6 @@ const Home: React.FC = () => {
             <Main>
                 <Title text='Welcome to my development blog' color='strongest' size='title' />
             </Main>
-
         </Container>
     );
 };
