@@ -32,6 +32,6 @@ export const font = {
     small: '12px',
     regular: '14px',
     medium: '16px',
-    large: '18px',
-    title: '32px',
+    large: '24px',
+    title: '48px',
 }
