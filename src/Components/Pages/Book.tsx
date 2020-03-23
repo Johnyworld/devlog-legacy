@@ -1,13 +1,18 @@
 import * as React from 'react';
-import styled from 'styled-components';
-
-const Container = styled.div``;
+import Content from '../../Layout/Content';
+import Aside from '../../Layout/Aside';
+import Main from '../../Layout/Main';
 
 const Book: React.FC = () => {
     return (
-        <Container>
-            <p>Book</p>
-        </Container>
+        <Content>
+            <Aside>
+                Book Side
+            </Aside>
+            <Main>
+                Book Main
+            </Main>
+        </Content>
     );
 };
 
