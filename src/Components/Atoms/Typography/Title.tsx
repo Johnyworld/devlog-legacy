@@ -6,12 +6,17 @@ interface Styles {
     color?: keyof Colors;
     size?: keyof Fonts;
     line?: boolean;
+    weight?: 'thin' | 'regular' | 'bold';
 }
 
 const Container:StyledComponent<'p', DefaultTheme, Styles, never> = styled.p`
     color: ${(props: any)=> props.color && props.theme.color[props.color]};
     font-size: ${(props: any)=> props.size && props.theme.font[props.size]};
-    font-weight: 700;
+    font-weight: ${(props: Styles)=> (
+        props.weight === 'thin' ? `300;` :
+        props.weight === 'regular' ? `400;` :
+        props.weight === 'bold' ? `700;` : ''
+    )};
     margin-bottom: 1em;
     ${(props: Styles) => props.line 
         ? `
@@ -25,9 +30,9 @@ interface Props extends Styles {
     text: string;
 }
 
-const Title: React.FC<Props> = ({ text, color='primary', size='large', line }:Props) => {
+const Title: React.FC<Props> = ({ text, weight='bold', color='primary', size='large', line }:Props) => {
     return (
-        <Container color={color} line={line} size={size} >{text}</Container>
+        <Container weight={weight} color={color} line={line} size={size} >{text}</Container>
     );
 };
 
