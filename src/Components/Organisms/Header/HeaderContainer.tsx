@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import ThemeModeButton from '../../Molecules/Buttons/ThemeModeButton';
 import SearchBar from '../../Atoms/Inputs/SearchBar';
 import LanguageChanger from '../../Molecules/Selection/LanguageChanger';
-import { useTranslation } from 'react-i18next';
 import Global from '../../Molecules/Menu/Global/Global';
+import HeaderLogo from '../../Molecules/Logos/HeaderLogo';
 
 const Container = styled.header`
     display: flex;
@@ -25,10 +25,9 @@ const Column = styled.div`
 `;
 
 const HeaderContainer: React.FC = () => {
-    const { t } = useTranslation();
     return (
         <Container>
-            <h3>{t('hello')}</h3>
+            <HeaderLogo />
             <Column>
                 <Global />
                 <ThemeModeButton />
