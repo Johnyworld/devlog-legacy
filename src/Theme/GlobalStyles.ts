@@ -6,11 +6,11 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         border: 0;
         box-sizing: border-box;
-        font-family: 'Inter', sans-serif;
     }
 
     html {
         font-size: 10px;
+        font-family: 'Inter', sans-serif;
     }
 
     body {
