@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Container = styled.main`
     flex-grow: 1;
-    padding: 5rem 2rem 2rem;
+    padding: 3.4rem 2rem 2rem;
     margin: 0 auto;
     max-width: var(--main_maxWidth);
 `;
