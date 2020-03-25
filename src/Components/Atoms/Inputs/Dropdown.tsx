@@ -40,7 +40,7 @@ const InputWrapper: StyledComponent<'div', DefaultTheme, widthProps, never> = st
 const Input: StyledComponent<'input', DefaultTheme, widthProps, never> = styled.input`
     ${props=> props.theme.inputNormal}
     color: ${props=> props.theme.color.strongest};
-    background-color: ${props => props.theme.color.lightest};
+    background-color: ${props => props.theme.color.input};
     width: ${(props: widthProps) =>
         props.fluid
             ? `100%`
@@ -63,7 +63,7 @@ const ClearButton = styled.button`
     font-size: 1.4rem;
     border: none;
     border-radius: 0.6em;
-    background: ${props=> props.theme.color.lighter};
+    background: ${props=> props.theme.color.light};
     outline: none;
     cursor: pointer;
 `;

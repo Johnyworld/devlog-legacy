@@ -11,7 +11,7 @@ const SearchInput = styled.input`
     ${props => props.theme.inputNormal}
     padding-left: 2.5em;
     color: ${props => props.theme.color.strongest};
-    background-color: ${props => props.theme.color.lightest};
+    background-color: ${props => props.theme.color.input};
 `;
 
 const Icon = styled.svg`

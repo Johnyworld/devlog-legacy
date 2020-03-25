@@ -20,7 +20,7 @@ var _default = {
     "msHyphens": "none",
     "hyphens": "none",
     "borderRadius": ".5em",
-    "background": "#222",
+    "background": "#111",
     "color": "#ccc"
   },
   "pre[class*=\"language-\"]": {
@@ -39,10 +39,9 @@ var _default = {
     "MozHyphens": "none",
     "msHyphens": "none",
     "hyphens": "none",
-    "background": "#222",
+    "background": "#111",
     "color": "#ccc",
     "padding": "1em",
-    "margin": ".5em -1em",
     "borderRadius": ".5em",
     "overflow": "auto"
   },

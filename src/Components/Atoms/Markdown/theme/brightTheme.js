@@ -42,7 +42,6 @@ var _default = {
     "msHyphens": "none",
     "hyphens": "none",
     "position": "relative",
-    "margin": ".5em -1em",
     "overflow": "visible",
     "padding": "1em",
     "borderRadius": ".5em",

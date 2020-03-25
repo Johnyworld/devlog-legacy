@@ -33,7 +33,7 @@ const Selector: StyledComponent<'div', DefaultTheme, ContainerProps, never> = st
     width: 2em;
     height: 2em;
     border-radius: 1em;
-    background-color: ${props => props.theme.color.lightest};
+    background-color: ${props => props.theme.color.input};
     transition: 0.3s;
     ${(props: ContainerProps) =>
         props.checked

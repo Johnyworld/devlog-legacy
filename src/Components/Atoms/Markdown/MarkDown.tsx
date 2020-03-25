@@ -5,21 +5,30 @@ import CodeBlock from './CodeBlock';
 
 const Container = styled(ReactMarkdown)`
     * {
-        margin-bottom: .5em;
         line-height: 1.3;
+        margin: 1em 0;
+
+        &:first-child { margin-top: 0 }
+        &:last-child { margin-bottom: 0 }
+
     }
+
+    h1, h2, h3, h4, h5, h6 {
+        &:not(:first-child) {
+            margin-top: 1.25em;
+        }
+    }
+
     h1 {
         font-size: 48px;
-        border-bottom: 1px solid;
     }
 
     h2 {
         font-size: 40px;
-        border-bottom: 1px solid;
     }
 
     h3 { 
-        font-size: 24px;
+        font-size: 28px;
     }
 
     h4 { 
@@ -36,14 +45,15 @@ const Container = styled(ReactMarkdown)`
 
     p {
         font-size: 18px;
-        
-    }
-    code {
-        font-size: 16px;
-        background-color: #1e4640;
-        font-family: consolas;
-        padding: 6px 6px 4px;
-        border-radius: 4px;
+        line-height: 1.8;
+
+        code {
+            font-size: 16px;
+            background-color: ${props=> props.theme.color.highlighter};
+            font-family: consolas;
+            padding: 6px 6px 4px;
+            border-radius: 4px;
+        }
     }
 
     ul, ol {
@@ -59,11 +69,15 @@ const Container = styled(ReactMarkdown)`
     }
 
     li {
-        margin-bottom: .5em;
     }
 
     blockquote {
+        background-color: ${props=> props.theme.color.lightest};
+        border-left: 4px solid ${props=> props.theme.color.primary_weak};
+        color: ${props=> props.theme.color.strong};
+        padding:  1em;
 
+        h1, h2, h3 { color: ${props=> props.theme.color.strongest} }
     }
 `;
 
