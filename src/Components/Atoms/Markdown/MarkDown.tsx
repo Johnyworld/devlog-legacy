@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import CodeBlock from './CodeBlock';
+import { HeadingRenderer } from './headingRenderer';
 
 const Container = styled(ReactMarkdown)`
     * {
@@ -87,7 +88,7 @@ interface Props {
 
 const Markdown: React.FC<Props> = ({ source }: Props) => {
     return (
-        <Container source={source} renderers={{ code: CodeBlock }} />
+        <Container source={source} renderers={{ code: CodeBlock, heading: HeadingRenderer }} />
     )
 }
 
