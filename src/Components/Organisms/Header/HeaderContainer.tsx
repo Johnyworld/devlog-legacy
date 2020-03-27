@@ -18,7 +18,7 @@ const Container = styled.header`
     z-index: 999;
     height: var(--header_height);
     border-bottom: 1px solid ${props=> props.theme.color.lightest};
-    background-color: ${props=> props.theme.color.background}
+    background-color: ${props=> props.theme.color.background};
 `;
 
 const Column = styled.div`
