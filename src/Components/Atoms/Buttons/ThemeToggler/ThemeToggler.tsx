@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { Props } from './ThemeTogglerTypes';
+import { Props, defaultProps } from './ThemeTogglerTypes';
 import { Container, Selector } from './ThemeTogglerStyles';
 
 /**
@@ -23,8 +23,6 @@ const ThemeToggler: React.FC<Props> = ({ className, initChecked, onChange }) => 
     );
 };
 
-ThemeToggler.defaultProps = {
-    initChecked: true
-};
+ThemeToggler.defaultProps = defaultProps;
 
 export default ThemeToggler;
