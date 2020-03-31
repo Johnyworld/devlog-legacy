@@ -3,14 +3,19 @@ import 'styled-components'
 declare module 'styled-components' {
 
     export interface Colors {
+        input: string;
+        deepest: string;
+        deep: string;
         background: string;
-        clear: string;
         lightest: string;
         lighter: string;
         light: string;
+        strong: string;
         strongest: string;
         dayOrNight: string;
         primary: string;
+        primary_weak: string;
+        highlighter: string;
     }
 
     export interface Fonts {

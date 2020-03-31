@@ -33,8 +33,7 @@ const Container: StyledComponent<'ul', DefaultTheme, Layout, never> = styled.ul`
 `;
 
 const ListItem: StyledComponent<'li', DefaultTheme, Layout, never> = styled.li`
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: ${(props: any)=> props.theme.font.regular};
 
     ${(props: Layout) => props.horisontal ? `
         margin-right: 2rem;

@@ -1,13 +1,18 @@
 import * as React from 'react';
-import styled from 'styled-components';
-
-const Container = styled.div``;
+import Content from '../../Layout/Content';
+import Aside from '../../Layout/Aside';
+import Main from '../../Layout/Main';
 
 const Blog: React.FC = () => {
     return (
-        <Container>
-            <p>Blog</p>
-        </Container>
+        <Content>
+            <Aside>
+                Blog Side
+            </Aside>
+            <Main>
+                Blog Main
+            </Main>
+        </Content>
     );
 };
 

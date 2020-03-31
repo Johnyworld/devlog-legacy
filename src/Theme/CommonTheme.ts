@@ -29,9 +29,9 @@ export const getListInBox = (isDarkMode:boolean) => `
 `
 
 export const font = {
-    small: '12px',
-    regular: '14px',
-    medium: '16px',
-    large: '18px',
-    title: '32px',
+    small: '14px',
+    regular: '16px',
+    medium: '18px',
+    large: '24px',
+    title: '48px',
 }
