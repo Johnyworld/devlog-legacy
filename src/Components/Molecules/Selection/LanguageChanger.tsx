@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { useCallback } from 'react';
-import Dropdown, { ListItemProps } from '../../Atoms/Inputs/Dropdown';
+import Dropdown from '../../Atoms/Inputs/Dropdown';
 import { modeStore } from '../../../store';
+import { ListItemProps } from '../../Atoms/Inputs/Dropdown/DropdownTypes';
 
 const SelectLanguages: React.FC = () => {
     const list = [
