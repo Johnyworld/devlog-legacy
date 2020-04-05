@@ -17,7 +17,7 @@ const Container = styled.header`
     padding: 0 2rem;
     z-index: 999;
     height: var(--header_height);
-    border-bottom: 1px solid ${props=> props.theme.color.lightest};
+    border-bottom: 1px solid ${props=> props.theme.color.lighter};
     background-color: ${props=> props.theme.color.background};
 `;
 

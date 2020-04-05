@@ -4,9 +4,10 @@ import styled from 'styled-components';
 const Container = styled.aside`
     width: 20%;
     max-width: 300px;
+    border-right: 1px solid ${props=> props.theme.color.deepest};
 `;
 
-const Side = styled.div`
+const Sticky = styled.div`
     padding: 2rem;
     position: -webkit-sticky;
     position: sticky;
@@ -16,9 +17,9 @@ const Side = styled.div`
 const Aside = ({ children }: any) => {
     return (
         <Container>
-            <Side>
+            <Sticky>
                 {children}
-            </Side>
+            </Sticky>
         </Container>
     )
 }

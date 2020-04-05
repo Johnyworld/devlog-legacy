@@ -52,7 +52,7 @@ const Home: React.FC = () => {
     return (
         <Content>
             <Aside>
-                <Title text={t('external')} color='light' size='regular' line />
+                <Title text={t('external')} color='primary' size='regular' line />
                 <Menu list={list} />
             </Aside>
             <Main>
