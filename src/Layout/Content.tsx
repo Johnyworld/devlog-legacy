@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
     display: flex;
-    height: calc(100vh - var(--header_height));
+    min-height: calc(100vh - var(--header_height));
     margin-top: var(--header_height);
 `;
 
